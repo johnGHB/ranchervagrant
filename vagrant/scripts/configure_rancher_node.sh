@@ -43,7 +43,7 @@ CLUSTERRESPONSE=$(docker run --net host \
 # Extract clusterid to use for generating the docker run command
 CLUSTERID=`echo $CLUSTERRESPONSE | jq -r .data[].id`
 
-if [ `hostname` == "node-01" ]; then
+if [ `hostname` == "ranchnode-01" ]; then
   ROLEFLAGS="--etcd --controlplane --worker"
 else
   #ROLEFLAGS="--worker"
